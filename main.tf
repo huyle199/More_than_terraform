@@ -25,3 +25,8 @@ module "database"{
   vpc_security_group_ids = []
 }
   
+module "loadbalancing"{
+  source = "./loadbalancing"
+  public_sg = module.networking.public_sg
+  public_subnets = module.networking.public_subnets
+}
