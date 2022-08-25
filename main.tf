@@ -8,3 +8,5 @@ module "networking"{
   max_subnets = 20
   public_cidrs = [for   i in range(2,255,2) : cidrsubnet(local.vpc_cidr,8,i)]
   private_cidrs = [for   i in range(2,255,2) : cidrsubnet(local.vpc_cidr,8,i)]
+  db_subnet_group = true
+  }
