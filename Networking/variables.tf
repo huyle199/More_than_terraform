@@ -29,3 +29,6 @@ variable "access_ip" {
   type = string
 }
 
+variable "db_subnet_group"{
+  type = bool 
+}
