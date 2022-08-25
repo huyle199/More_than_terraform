@@ -103,3 +103,10 @@ resource "aws_security_group" "huy_sg"{
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_db_subnet_group" "huy_rds_subnetgroup"{
+  name = "huy_rds_subnetgroup"
+  subnet_ids = aws_subnet.huy_private_subnet.*.id
+  tags{
+    Name = "huy_rds_subnetgroup"
+}
