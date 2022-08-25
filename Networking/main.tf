@@ -105,6 +105,7 @@ resource "aws_security_group" "huy_sg"{
 }
 
 resource "aws_db_subnet_group" "huy_rds_subnetgroup"{
+  count = var.db_subnet_group == true ? 1:0
   name = "huy_rds_subnetgroup"
   subnet_ids = aws_subnet.huy_private_subnet.*.id
   tags{
