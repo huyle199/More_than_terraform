@@ -16,9 +16,9 @@ module "database"{
   db_storage = 10
   db_engine_version = "5.7.22"
   db_instance_class = "db.t2.micro"
-  dbname = "rancher"
-  dbuser = "bobby"
-  db_password = "t4b!3s2021"
+  dbname = var.dbname
+  dbuser = "var.dbuser
+  db_password = var.dbpassword
   db_identifier = "huy_db"
   skip_db_snapshot = true
   db_subnet_group_name = ""
